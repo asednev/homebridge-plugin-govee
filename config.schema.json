@@ -1,5 +1,5 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
+  "pluginAlias": "GoveeHomebridgePlugin",
   "pluginType": "platform",
   "singular": true,
   "schema": {
@@ -9,7 +9,17 @@
         "title": "Name",
         "type": "string",
         "required": true,
-        "default": "Example Dynamic Platform"
+        "default": "Govee"
+      }, 
+      "batteryThreshold": {
+        "title": "Battery Threshold",
+        "type": "number",
+        "default": "25"
+      },
+      "debug": {
+        "title": "Debug",
+        "type": "boolean",
+        "default": "false"
       }
     }
   }
