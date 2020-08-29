@@ -7,6 +7,7 @@
 
 
 # homebridge-plugin-govee
+[![npm version](https://badge.fury.io/js/homebridge-plugin-govee.svg)](https://badge.fury.io/js/homebridge-plugin-govee)
 
 Govee H5075 Thermometer Hygrometer plugin for Homebrige. Exposes current humidity, current temperate, and low battery mode.
 
@@ -28,8 +29,23 @@ This plugin is plug-and-play, it will identify Govee devices broadcasting their 
 
 ## Troubleshooting
 
+### Errors during installation of this plugin on macOS
+
+```
+No receipt for 'com.apple.pkg.CLTools_Executables' found at '/'.
+No receipt for 'com.apple.pkg.DeveloperToolsCLILeo' found at '/'.
+No receipt for 'com.apple.pkg.DeveloperToolsCLI' found at '/'.
+gyp: No Xcode or CLT version detected!
+```
+* Check troubleshooting steps for `nodegyp`: https://github.com/nodejs/node-gyp/blob/master/macOS_Catalina.md
+* Still getting these errors, double-check that you performed troubleshooting steps for the user account running Homebridge on your mac
+
+
+### Plugin installs successfully, but no sensors show up
 * Check `[x] Debug` in Homebridge settings for Govee Homebridge Plugin
 * Enable `Homebridge Debug Mode` in Homebridge Settings
+* Check logs
+
 
 ## Credits
 

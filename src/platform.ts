@@ -4,7 +4,7 @@ import { PLATFORM_NAME, PLUGIN_NAME } from './settings';
 import { GoveePlatformAccessory } from './platformAccessory';
 
 import { startDiscovery, debug as GoveeDebug, GoveeReading } from 'govee-bt-client';
-import { deviceContext } from './deviceContext';
+import { DeviceContext } from './deviceContext';
 
 /**
  * HomebridgePlatform
@@ -116,7 +116,7 @@ export class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
 
         // store a copy of the device object in the `accessory.context`
         // the `context` property can be used to store any data about the accessory you may need
-        const contextDevice: deviceContext = {
+        const contextDevice: DeviceContext = {
           address: this.sanitize(reading.address),
           model: this.sanitize(reading.model),
           uuid: reading.uuid,

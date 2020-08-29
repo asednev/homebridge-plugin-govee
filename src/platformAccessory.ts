@@ -2,7 +2,7 @@ import { Service, PlatformAccessory, CharacteristicGetCallback } from 'homebridg
 
 import { GoveeHomebridgePlatform } from './platform';
 import { GoveeReading } from 'govee-bt-client';
-import { deviceContext } from './deviceContext';
+import { DeviceContext } from './deviceContext';
 
 /**
  * Platform Accessory
@@ -28,7 +28,7 @@ export class GoveePlatformAccessory {
       throw new Error('Missing device context');
     }
 
-    const deviceContext: deviceContext = accessory.context.device;
+    const deviceContext: DeviceContext = accessory.context.device;
     
     if (accessory.context.batteryThreshold) {
       this.LOW_BATTERY_THRESHOLD = accessory.context.batteryThreshold;
