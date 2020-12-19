@@ -1,7 +1,7 @@
 {
   "displayName": "Govee Thermometer Hygrometer Homebridge Plugin",
   "name": "homebridge-plugin-govee",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Homebridge plugin for Govee H5075 Bluetooth Thermometer Hygrometer.",
   "license": "Apache-2.0",
   "repository": {

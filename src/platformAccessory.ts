@@ -86,7 +86,7 @@ export class GoveePlatformAccessory {
     this.lastReading = reading;
 
     this.humiditySensor.updateCharacteristic(this.platform.Characteristic.CurrentRelativeHumidity, reading.humidity);
-
+    this.temperatureSensor.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, reading.tempInC);
   }
 
 }
