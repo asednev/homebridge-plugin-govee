@@ -15,7 +15,10 @@ Govee H5075 Thermometer Hygrometer plugin for Homebrige. Exposes current humidit
 
 ## Supported Devices
 
+* Govee H5072    
 * Govee H5075
+* Govee H5101
+* Govee H5102
 
 ## Prerequisites
 
@@ -51,4 +54,5 @@ gyp: No Xcode or CLT version detected!
 
 * [Homebridge](https://github.com/homebridge/homebridge/) for a great platform to build on top of.
 * [Thrilleratplay/GoveeWatcher](https://github.com/Thrilleratplay/GoveeWatcher) for explanation and examples of how to decode advertisement data for Govee G5075.
+* [Home-Is-Where-You-Hang-Your-Hack/sensor.goveetemp_bt_hci](https://github.com/Home-Is-Where-You-Hang-Your-Hack/sensor.goveetemp_bt_hci) for explanation and examples of advertisement data for various Govee devices.
 * [@abandonware/noble](https://github.com/abandonware/noble) for a great BLE library for node
