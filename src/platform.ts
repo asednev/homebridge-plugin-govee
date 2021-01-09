@@ -113,6 +113,7 @@ export class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
 
         // if you need to update the accessory.context then you should run `api.updatePlatformAccessories`. eg.:
         existingAccessory.context.batteryThreshold = this.config.batteryThreshold;
+        existingAccessory.context.humidityOffset = this.config.humidityOffset;
         this.api.updatePlatformAccessories([existingAccessory]);
 
         // create the accessory handler for the restored accessory
@@ -142,6 +143,7 @@ export class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
         };
         accessory.context.device = contextDevice;
         accessory.context.batteryThreshold = this.config.batteryThreshold;
+        accessory.context.humidityOffset = this.config.humidityOffset;
 
         // create the accessory handler for the newly create accessory
         // this is imported from `platformAccessory.ts`
