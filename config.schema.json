@@ -20,6 +20,11 @@
         "title": "Debug",
         "type": "boolean",
         "default": "false"
+      },
+      "humidityOffset": {
+        "title": "Humidity Offset",
+        "type": "number",
+        "default": "0"
       }
     }
   }

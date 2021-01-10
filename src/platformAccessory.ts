@@ -12,6 +12,7 @@ import { DeviceContext } from './deviceContext';
 export class GoveePlatformAccessory {
 
   private LOW_BATTERY_THRESHOLD = 25;
+  private HUMIDITY_OFFSET = 0;
 
   private humiditySensor: Service;
   private temperatureSensor: Service;
@@ -33,7 +34,9 @@ export class GoveePlatformAccessory {
     if (accessory.context.batteryThreshold) {
       this.LOW_BATTERY_THRESHOLD = accessory.context.batteryThreshold;
     }
-
+    if (accessory.context.humidityOffset) {
+      this.HUMIDITY_OFFSET = accessory.context.humidityOffset;
+    }
     // set accessory information
     const accessoryInformationService = this.accessory.getService(this.platform.Service.AccessoryInformation);
 
@@ -68,8 +71,8 @@ export class GoveePlatformAccessory {
   }
 
   getCurrentRelativeHumidity(callback: CharacteristicGetCallback) {
-    this.platform.log.debug('getCurrentRelativeHumidity', this.lastReading?.humidity);
-    callback(null, this.lastReading?.humidity);
+    this.platform.log.debug('getCurrentRelativeHumidity', this.lastReading?.humidity, "offset", this.HUMIDITY_OFFSET);
+    callback(null, this.lastReading?.humidity + this.HUMIDITY_OFFSET);
   }
 
   getStatusLowBattery(callback: CharacteristicGetCallback) {
@@ -85,7 +88,7 @@ export class GoveePlatformAccessory {
   updateReading(reading: GoveeReading) {
     this.lastReading = reading;
 
-    this.humiditySensor.updateCharacteristic(this.platform.Characteristic.CurrentRelativeHumidity, reading.humidity);
+    this.humiditySensor.updateCharacteristic(this.platform.Characteristic.CurrentRelativeHumidity, reading.humidity + this.HUMIDITY_OFFSET);
     this.temperatureSensor.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, reading.tempInC);
   }
 
