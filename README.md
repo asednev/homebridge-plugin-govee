@@ -9,13 +9,14 @@
 # homebridge-plugin-govee
 [![npm version](https://badge.fury.io/js/homebridge-plugin-govee.svg)](https://badge.fury.io/js/homebridge-plugin-govee)
 
-Govee H5075 Thermometer Hygrometer plugin for Homebrige. Exposes current humidity, current temperate, and low battery mode.
+Govee H5xxx Thermometer Hygrometer plugin for Homebrige. Exposes current humidity, current temperate, and low battery mode.
 
 <img src="https://github.com/asednev/homebridge-plugin-govee/raw/master/assets/GoveeH5075.jpg" alt="Govee H5075">
 
 ## Supported Devices
 
-* Govee H5072    
+* Govee H5072
+* Govee H5074
 * Govee H5075
 * Govee H5101
 * Govee H5102
