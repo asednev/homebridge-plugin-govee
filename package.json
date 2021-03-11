@@ -1,7 +1,7 @@
 {
   "displayName": "Govee Thermometer Hygrometer Homebridge Plugin",
   "name": "homebridge-plugin-govee",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Homebridge plugin for Govee H5xxx Bluetooth Thermometer Hygrometer.",
   "license": "Apache-2.0",
   "repository": {
@@ -32,7 +32,7 @@
     "H5102"
   ],
   "dependencies": {
-    "govee-bt-client": "^1.0.7"
+    "govee-bt-client": "^1.0.9"
   },
   "devDependencies": {
     "@types/node": "^14.11.2",
