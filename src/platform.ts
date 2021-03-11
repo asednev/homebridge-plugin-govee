@@ -79,8 +79,16 @@ export class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
       this.log.debug("Govee reading", reading);
 
       let deviceUniqueId = reading.uuid;
-      if (reading.model !== "") {
+      if (reading.model) {
         deviceUniqueId = reading.model;
+      }
+
+      if (!deviceUniqueId) {
+        this.log.error(
+          "device missing unique identifier. Govee reading: ",
+          reading
+        );
+        return;
       }
 
       // discovered devices and register each one if it has not already been registered
