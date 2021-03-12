@@ -20,7 +20,7 @@ Govee H5xxx Thermometer Hygrometer plugin for Homebrige. Exposes current humidit
 * Govee H5075
 * Govee H5101
 * Govee H5102
-
+* Govee H5179
 ## Prerequisites
 
 * Compatible bluetooth module for macOS / Windows / Linux (see [prerequisites for noble](https://github.com/abandonware/noble#prerequisites)).
