@@ -11,6 +11,8 @@ export declare class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
     readonly Service: typeof Service;
     readonly Characteristic: typeof Characteristic;
     readonly accessories: PlatformAccessory[];
+    private platformStatus?;
+    private readonly discoveryCache;
     constructor(log: Logger, config: PlatformConfig, api: API);
     /**
      * This function is invoked when homebridge restores cached accessories from disk at startup.
@@ -23,6 +25,9 @@ export declare class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
      * must not be registered again to prevent "duplicate UUID" errors.
      */
     discoverDevices(): void;
+    private goveeDiscoveredReading;
+    private goveeScanStarted;
+    private goveeScanStopped;
     private sanitize;
 }
 //# sourceMappingURL=platform.d.ts.map
