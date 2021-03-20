@@ -1,7 +1,7 @@
 {
   "displayName": "Homebridge Govee Thermometer Hygrometer",
   "name": "homebridge-plugin-govee",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Homebridge plugin for Govee H5xxx Bluetooth Thermometer Hygrometer.",
   "license": "Apache-2.0",
   "repository": {
@@ -23,6 +23,8 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:ci": "jest --ci",
+    "preversion": "npm run lint && npm run test:ci",
+    "version": "npm run build && git add -A dist",
     "prepublishOnly": "npm run lint && npm run test:ci && npm run build"
   },
   "keywords": [
