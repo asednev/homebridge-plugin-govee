@@ -7,6 +7,7 @@
 # homebridge-plugin-govee
 
 [![npm version](https://badge.fury.io/js/homebridge-plugin-govee.svg)](https://badge.fury.io/js/homebridge-plugin-govee)
+[![verified-by-homebridge](https://badgen.net/badge/homebridge/verified/purple)](https://github.com/homebridge/homebridge/wiki/Verified-Plugins)
 
 Govee H5xxx Thermometer Hygrometer plugin for Homebrige. Exposes current humidity, current temperate, and low battery mode.
 
