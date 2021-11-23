@@ -25,7 +25,15 @@
         "title": "Humidity Offset",
         "type": "number",
         "default": "0"
-      }
+      },
+      "IgnoreDeviceNames": {
+        "title": "Ignored DeviceNames",
+        "type": "array",
+          "items": {
+         "title": "DeviceName",
+         "type": "string"
+       }
+     }
     }
   }
 }
