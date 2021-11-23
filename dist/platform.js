@@ -70,7 +70,15 @@ class GoveeHomebridgePlatform {
             this.log.error("device missing unique identifier. Govee reading: ", reading);
             return;
         }
-        // discovered devices and register each one if it has not already been registered
+        const displayName = `${this.sanitize(reading.model)}`;
+        //this.log.info("Current List of Ignored Devices: ",this.config.IgnoreDeviceNames);
+        const IgnoredDeviceNames = this.config.IgnoreDeviceNames;
+        if( IgnoredDeviceNames.includes(displayName)) { // it will return true if you `foo` is one of array values else false
+           this.log.debug("Device in Ignore List", displayName," skipping the device!");
+           this.log.info("Device in Ignore List", displayName," skipping the device!");
+           return;
+        }
+         // discovered devices and register each one if it has not already been registered
         // generate a unique id for the accessory this should be generated from
         // something globally unique, but constant, for example, the device serial
         // number or MAC address
