@@ -52,11 +52,11 @@ class GoveeHomebridgePlatform {
     discoverDevices() {
         this.log.debug("Start discovery");
         if (this.config.debug) {
-            govee_bt_client_1.debug(true);
+            (0, govee_bt_client_1.debug)(true);
         }
-        govee_bt_client_1.startDiscovery(this.goveeDiscoveredReading.bind(this));
-        govee_bt_client_1.registerScanStart(this.goveeScanStarted.bind(this));
-        govee_bt_client_1.registerScanStop(this.goveeScanStopped.bind(this));
+        (0, govee_bt_client_1.startDiscovery)(this.goveeDiscoveredReading.bind(this));
+        (0, govee_bt_client_1.registerScanStart)(this.goveeScanStarted.bind(this));
+        (0, govee_bt_client_1.registerScanStop)(this.goveeScanStopped.bind(this));
         // it is possible to remove platform accessories at any time using `api.unregisterPlatformAccessories`, eg.:
         // this.api.unregisterPlatformAccessories(PLUGIN_NAME, PLATFORM_NAME, [accessory]);
     }
@@ -137,7 +137,7 @@ class GoveeHomebridgePlatform {
             }
             this.log.warn("Govee discovery stopped while Homebridge is running.");
             this.log.info("Restart Discovery");
-            govee_bt_client_1.startDiscovery(this.goveeDiscoveredReading.bind(this));
+            (0, govee_bt_client_1.startDiscovery)(this.goveeDiscoveredReading.bind(this));
         }, WAIT_INTERVAL);
     }
     sanitize(s) {
