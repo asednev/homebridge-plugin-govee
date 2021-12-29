@@ -108,6 +108,14 @@ export class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
       );
       return;
     }
+    //Now check if the device is in the ignore list, if it is, skip working on it
+    const displayName = `${this.sanitize(reading.model)}`;
+    const IgnoredDeviceNames = this.config.IgnoreDeviceNames;
+    if( IgnoredDeviceNames.includes(displayName)) { // it will return true if you DeviceName is one of array values else false
+        //Device is in the Ignore-List so skip working on it
+        this.log.debug("Device in Ignore List", displayName," skipping the device!");
+        return;
+    }
 
     // discovered devices and register each one if it has not already been registered
 
