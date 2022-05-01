@@ -39,7 +39,7 @@
   ],
   "dependencies": {
     "@abandonware/noble": "1.9.2-15",
-    "govee-bt-client": "1.0.13"
+    "govee-bt-client": "~1.0.14"
   },
   "devDependencies": {
     "@types/jest": "^26.0.21",
