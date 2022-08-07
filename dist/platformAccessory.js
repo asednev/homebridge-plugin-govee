@@ -53,11 +53,25 @@ class GoveePlatformAccessory {
         this.temperatureSensor
             .getCharacteristic(this.platform.Characteristic.StatusLowBattery)
             .on("get", this.getStatusLowBattery.bind(this));
+        this.battery =
+            this.accessory.getService(this.platform.Service.Battery) ||
+                this.accessory.addService(this.platform.Service.Battery);
+        this.battery
+            .getCharacteristic(this.platform.Characteristic.BatteryLevel)
+            .on("get", this.getBatteryLevel.bind(this));
+        this.battery
+            .getCharacteristic(this.platform.Characteristic.StatusLowBattery)
+            .on("get", this.getStatusLowBattery.bind(this));
     }
     getCurrentRelativeHumidity(callback) {
         var _a, _b;
         this.platform.log.debug("getCurrentRelativeHumidity", (_a = this.lastReading) === null || _a === void 0 ? void 0 : _a.humidity, "offset", this.HUMIDITY_OFFSET);
         callback(null, ((_b = this.lastReading) === null || _b === void 0 ? void 0 : _b.humidity) + this.HUMIDITY_OFFSET);
+    }
+    getBatteryLevel(callback) {
+        var _a;
+        this.platform.log.debug("getBatteryLevel");
+        callback(null, (_a = this.lastReading) === null || _a === void 0 ? void 0 : _a.battery);
     }
     getStatusLowBattery(callback) {
         var _a;
@@ -73,6 +87,7 @@ class GoveePlatformAccessory {
         this.lastReading = reading;
         this.humiditySensor.updateCharacteristic(this.platform.Characteristic.CurrentRelativeHumidity, reading.humidity + this.HUMIDITY_OFFSET);
         this.temperatureSensor.updateCharacteristic(this.platform.Characteristic.CurrentTemperature, reading.tempInC);
+        this.battery.updateCharacteristic(this.platform.Characteristic.BatteryLevel, reading.battery);
     }
 }
 exports.GoveePlatformAccessory = GoveePlatformAccessory;

@@ -12,11 +12,13 @@ export declare class GoveePlatformAccessory {
     private readonly reading;
     private LOW_BATTERY_THRESHOLD;
     private HUMIDITY_OFFSET;
+    private battery;
     private humiditySensor;
     private temperatureSensor;
     private lastReading;
     constructor(platform: GoveeHomebridgePlatform, accessory: PlatformAccessory, reading: GoveeReading);
     getCurrentRelativeHumidity(callback: CharacteristicGetCallback): void;
+    getBatteryLevel(callback: CharacteristicGetCallback): void;
     getStatusLowBattery(callback: CharacteristicGetCallback): void;
     getCurrentTemperature(callback: CharacteristicGetCallback): void;
     updateReading(reading: GoveeReading): void;
