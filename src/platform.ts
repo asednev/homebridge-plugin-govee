@@ -119,8 +119,7 @@ export class GoveeHomebridgePlatform implements DynamicPlatformPlugin {
         this.log.debug("Device in Ignore List ", displayName, " skipping the device!");
         return;
       }
-    }
-    else {
+    } else {
       this.log.debug("Ignore List is empty, nothing to check!");
     }
  

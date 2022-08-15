@@ -28,11 +28,11 @@ class GoveeHomebridgePlatform {
         this.api.on("didFinishLaunching", () => {
             log.debug("Executed didFinishLaunching callback");
             // run the method to discover / register your devices as accessories
-            this.platformStatus = "didFinishLaunching" /* DID_FINISH_LAUNCHING */;
+            this.platformStatus = "didFinishLaunching" /* APIEvent.DID_FINISH_LAUNCHING */;
             this.discoverDevices();
         });
         this.api.on("shutdown", () => {
-            this.platformStatus = "shutdown" /* SHUTDOWN */;
+            this.platformStatus = "shutdown" /* APIEvent.SHUTDOWN */;
         });
     }
     /**
@@ -140,13 +140,13 @@ class GoveeHomebridgePlatform {
     }
     goveeScanStopped() {
         this.log.info("Govee Scan Stopped");
-        if (!this.platformStatus || this.platformStatus === "shutdown" /* SHUTDOWN */) {
+        if (!this.platformStatus || this.platformStatus === "shutdown" /* APIEvent.SHUTDOWN */) {
             return;
         }
         const WAIT_INTERVAL = 5000;
         // wait, and restart discovery if platform status doesn't change
         setTimeout(() => {
-            if (!this.platformStatus || this.platformStatus === "shutdown" /* SHUTDOWN */) {
+            if (!this.platformStatus || this.platformStatus === "shutdown" /* APIEvent.SHUTDOWN */) {
                 return;
             }
             this.log.warn("Govee discovery stopped while Homebridge is running.");
